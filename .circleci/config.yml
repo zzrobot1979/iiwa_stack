@@ -21,7 +21,7 @@ jobs:
           command: "apt install -y git python3-catkin-tools"
       - run:
           name: "Checkout"
-          command: "mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts && mkdir src && cd src && git clone -b \"$CIRCLE_BRANCH\" \"$CIRCLE_REPOSITORY_URL\" && cd .."
+          command: "mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts && mkdir src && cd src && git clone -b \"$CIRCLE_BRANCH\" https://github.com/zzrobot1979/iiwa_stack.git && cd .."
       - run:
           name: "Catkin Build"
           command: "source /opt/ros/noetic/setup.bash && catkin build --no-status --summarize"
